@@ -3,41 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emirhan Ercan</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sevgi Butonu</title>
+    <style>
+        /* Sayfayı ortalamak için (isteğe bağlı) */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Açık pembe arka plan */
+        }
+
+        /* Butonun stili */
+        #sevgiButonu {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #e91e63; /* Canlı pembe */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #sevgiButonu:hover {
+            background-color: #c2185b;
+        }
+
+        /* Başlangıçta gizli olan mesaj */
+        #mesaj {
+            display: none; /* Başlangıçta görünmez */
+            margin-top: 25px;
+            font-size: 28px;
+            color: #d81b60; /* Koyu pembe */
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Yazılım Dünyasına Hoş Geldiniz</h1>
-        </div>
-    </header>
+    <button id="sevgiButonu">Benim için tıkla!</button>
 
-    <main>
-        <div class="container">
-            <section class="card">
-                <h2>Yazılım Nedir?</h2>
-                <p>Yazılım, bilgisayarlara veya diğer elektronik cihazlara belirli bir görevi yerine getirmeleri için komutlar veren programların ve verilerin bütünüdür. Kısacası, donanımın "nasıl" çalışacağını söyleyen talimatlardır.</p>
-            </section>
+    <p id="mesaj">❤️ İdil'i çok seviyorum ❤️</p>
 
-            <section class="card">
-                <h2>Popüler Yazılım Dilleri</h2>
-                <p>Dünyada en çok kullanılan bazı popüler programlama dilleri:</p>
-                <ul>
-                    <li><strong>JavaScript:</strong> Web sitelerini interaktif hale getirmek için kullanılır.</li>
-                    <li><strong>Python:</strong> Okunması kolay, çok yönlü bir dildir. Web geliştirmede, veri biliminde ve yapay zekada popülerdir.</li>
-                    <li><strong>Java:</strong> "Bir kez yaz, her yerde çalıştır" sloganıyla bilinir. Büyük ölçekli kurumsal uygulamalarda ve Android geliştirmede kullanılır.</li>
-                </ul>
-            </section>
-        </div>
-    </main>
+    <script>
+        // Gerekli HTML elementlerini seç
+        const buton = document.getElementById('sevgiButonu');
+        const yazi = document.getElementById('mesaj');
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Benim Basit Sitem</p>
-        </div>
-    </footer>
+        // Butona bir tıklama olayı ekle
+        buton.addEventListener('click', function() {
+            // Mesajı görünür yap
+            yazi.style.display = 'block';
+        });
+    </script>
 
 </body>
 </html>
