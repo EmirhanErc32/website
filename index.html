@@ -1,215 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Emirhan Ercan — Yazılımcı</title>
-  <meta name="description" content="Kısa, etkileyici yazılım portfolyosu. HTML/CSS/JS ile hazırlanmış tek dosyalık özgeçmiş ve proje sunumu.">
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --accent1:#7c3aed; --accent2:#06b6d4; --glass: rgba(255,255,255,0.04);
-      --text:#e6eef8; --muted:#9fb0c8;
-      --radius:16px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent), radial-gradient(1000px 500px at 90% 90%, rgba(6,182,212,0.06), transparent), var(--bg); color:var(--text); -webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:48px auto;padding:32px}
-
-    .top{display:flex;gap:24px;align-items:center}
-    .avatar{width:128px;height:128px;border-radius:18px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:36px;color:#051022;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
-
-    .hero{flex:1}
-    h1{margin:0;font-size:28px}
-    .subtitle{color:var(--muted);margin-top:6px}
-    .tags{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-    .tag{background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:var(--radius);backdrop-filter: blur(6px);box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:22px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.top{flex-direction:column;align-items:flex-start;text-align:left} .avatar{width:96px;height:96px;font-size:26px}}.top{flex-direction:row} .avatar{width:96px;height:96px;font-size:26px}}
-
-    /* typing code block */
-    .code-block{background:linear-gradient(180deg,#071428 0%, #051225 100%);padding:18px;border-radius:12px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;font-size:13px;color:#cfe9ff;line-height:1.45;max-height:220px;overflow:auto}
-    .cursor{display:inline-block;width:10px;background:var(--text);margin-left:6px;animation:blink 1s steps(2,end) infinite}
-    @keyframes blink{50%{opacity:0}}
-
-    /* skills */
-    .skills{display:flex;flex-direction:column;gap:12px}
-    .skill{display:flex;justify-content:space-between;align-items:center}
-    .bar{height:10px;background:var(--glass);border-radius:999px;flex:1;margin-left:12px;margin-right:12px;overflow:hidden}
-    .bar > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0%;transition:width 1s ease}
-
-    /* projects */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media (max-width:600px){.projects{grid-template-columns:1fr}}
-    .project{padding:12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
-    .project h4{margin:0 0 6px 0}
-    .project p{margin:0;color:var(--muted);font-size:14px}
-
-    /* contact */
-    .contact{display:flex;flex-direction:column;gap:8px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#021124;font-weight:600;text-decoration:none;border:none;cursor:pointer}
-    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
-
-    footer{margin-top:26px;color:var(--muted);text-align:center;font-size:13px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirhan Ercan | Yazılımcı</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-  <main class="container">
-    <div class="top card">
-      <div style="display:flex;gap:20px;align-items:center;width:100%">
-        <div class="avatar">EE</div>
-        <div class="hero">
-          <h1 id="name">Emirhan Ercan <span style="color:var(--muted);font-size:15px">| Yazılım Geliştirici</span></h1>
-          <div class="subtitle">Benimle tanış — kod, tasarım ve basit sistemlerle değer katan bir geliştiriciyim.</div>
-          <div class="tags" aria-hidden>
-            <div class="tag">HTML</div>
-            <div class="tag">CSS</div>
-            <div class="tag">JavaScript</div>
-            <div class="tag">PHP</div>
-            <div class="tag">React / Frontend</div>
-          </div>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <a class="btn" href="CV-Emirhan-Ercan.pdf" download>CV İndir (PDF)</a>
-          <div style="margin-top:8px;color:var(--muted);font-size:13px">İstanbul, Türkiye</div>
-        </div>
-      </div>
-    </div>
 
-    <div class="grid">
-      <section class="card">
-        <h3>Hızlı Kodlu Tanıtım</h3>
-        <div class="code-block" id="typedCode" aria-live="polite"></div>
-        <div style="display:flex;gap:10px;margin-top:12px">
-          <button class="btn" onclick="restartTyping()">Yeniden Yaz</button>
-          <button class="btn ghost" onclick="revealEmail()">E-posta Göster</button>
-        </div>
+    <header class="header">
+        <a href="#" class="logo">Emirhan Ercan</a>
 
-        <h3 style="margin-top:18px">Projelerim</h3>
-        <div class="projects" id="projects">
-          <div class="project">
-            <h4>Görsel Çark Uygulaması</h4>
-            <p>Takımları çeviren, interaktif JS animasyonları ile zengin görsel deneyim.</p>
-          </div>
-          <div class="project">
-            <h4>Sosyal Mini - Ercangram</h4>
-            <p>Basit kayıt/giriş ve paylaşım akışı. HTML/CSS/PHP ile yapıldı.</p>
-          </div>
-          <div class="project">
-            <h4>Binary Converter</h4>
-            <p>VS Code entegrasyonu ve GitHub ile çalışma pratiği.</p>
-          </div>
-          <div class="project">
-            <h4>Kişisel Blog</h4>
-            <p>Markdown ile yazı yayınlama, responsive tasarım.</p>
-          </div>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active" data-lang="nav_home">Ana Sayfa</a>
+            <a href="#about" data-lang="nav_about">Hakkımda</a>
+            <a href="#skills" data-lang="nav_skills">Yetenekler</a>
+            <a href="#portfolio" data-lang="nav_portfolio">Projeler</a>
+            <a href="#contact" data-lang="nav_contact">İletişim</a>
+            <button id="lang-btn">EN</button>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3 data-lang="home_hello">Merhaba, Ben</h3>
+            <h1>Emirhan Ercan</h1>
+            <h3><span data-lang="home_iam">Ben</span> <span class="multiple-text"></span></h3>
+            
+            <p data-lang="home_desc">
+                Mobil ve web teknolojileriyle modern çözümler üreten, öğrenmeye tutkulu bir geliştiriciyim.
+            </p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="mailto:emirhanercan032@gmail.com"><i class='bx bxs-envelope'></i></a>
+            </div>
+            <a href="#contact" class="btn" data-lang="btn_contact">Bana Ulaş</a>
         </div>
 
-        <h3 style="margin-top:18px">Beceriler</h3>
-        <div class="skills">
-          <div class="skill"><strong>HTML</strong><div class="bar" data-val="95"><i></i></div></div>
-          <div class="skill"><strong>CSS</strong><div class="bar" data-val="90"><i></i></div></div>
-          <div class="skill"><strong>JavaScript</strong><div class="bar" data-val="85"><i></i></div></div>
-          <div class="skill"><strong>PHP</strong><div class="bar" data-val="72"><i></i></div></div>
+        <div class="home-img">
+            <div class="glowing-circle">
+                <i class='bx bx-code-alt'></i>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <aside class="card">
-        <h3>Hakkımda</h3>
-        <p style="color:var(--muted);">Doğuş Üniversitesinde Bilgisayar Programcılığı okumaktayım. Uygulama geliştirme, web geliştirme, frontend, backend, full‑stack ve oyun geliştirme alanlarında çalışmalar yapıyorum.</p>
-
-        <h4 style="margin-top:14px">İletişim</h4>
-        <div class="contact">
-          <div style="font-weight:600">E-posta: <span id="emailMasked">emirhanercan032@gmail.com</span></div>
-          <a class="btn" href="mailto:emirhanercan032@gmail.com">E-posta Gönder</a>
-          <a class="btn ghost" href="#projects" onclick="focusProjects()">Projelerime Git</a>
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="heading" data-lang="about_heading">Hakkımda <span>Ben Kimim?</span></h2>
+            <h3 data-lang="about_sub">Mobil & Web Geliştirici</h3>
+            <p data-lang="about_text">
+                Doğuş Üniversitesi'nde Bilgisayar Programcılığı öğrencisiyim. Mobil uygulama geliştirmeye odaklanıyorum. Temel programlama dilleri ve geliştirme araçları konusunda deneyimim var ve bilgilerimi pratik projelerde uygulamaya hevesliyim. Hem iOS hem de Android platformları için standart geliştirme uygulamalarını takip ederek ve anlaşılır, işlevsel kodlar kullanarak uygulama geliştirmekle ilgileniyorum. Amacım, mobil uygulama geliştirme konusunda profesyonel deneyim kazanmak ve güvenilir ve kullanılabilir yazılım çözümleri sunarak teknik becerilerimi geliştirmeye devam etmek. Bir ekibin parçası olmak ve ekip olarak çalışmak istiyorum.
+            </p>
+            <p class="birth-year" data-lang="birth_date" style="margin-top: 10px; color: var(--main-color); font-weight:bold;">Doğum Yılı: 2005</p>
         </div>
+    </section>
 
-        <h4 style="margin-top:14px">Sosyal</h4>
-        <div style="display:flex;gap:8px;margin-top:6px">
-          <a class="tag" href="https://github.com/EmirhanErc32">🐙 GitHub</a>
-          <a class="tag" href="https://www.linkedin.com/in/emirhanercan/">💼 LinkedIn</a>
-          <a class="tag" href="https://instagram.com/emirhaneercan">📸 Instagram</a>
+    <section class="skills" id="skills">
+        <h2 class="heading" data-lang="skills_heading">Teknik <span>Yetenekler</span></h2>
+        
+        <div class="skills-container">
+            <div class="skill-box"><i class='bx bxl-java'></i> <span>Java</span></div>
+            <div class="skill-box"><i class='bx bxl-javascript'></i> <span>JavaScript</span></div>
+            <div class="skill-box"><i class='bx bxl-react'></i> <span>React</span></div>
+            <div class="skill-box"><i class='bx bxl-nodejs'></i> <span>Node.js</span></div>
+            <div class="skill-box"><i class='bx bxl-html5'></i> <span>HTML</span></div>
+            <div class="skill-box"><i class='bx bxl-css3'></i> <span>CSS</span></div>
+            <div class="skill-box"><i class='bx bxl-c-plus-plus'></i> <span>C / C++</span></div>
+            <div class="skill-box"><i class='bx bx-code-curly'></i> <span>C#</span></div>
+            <div class="skill-box"><i class='bx bxl-tux'></i> <span>Linux</span></div>
         </div>
+    </section>
 
-        <h4 style="margin-top:14px">Küçük bir demo</h4>
-        <p style="color:var(--muted);font-size:13px">Aşağıdaki düğmeye basınca skill barları canlanır ve kod yeniden yazılır.</p>
-        <button class="btn" onclick="playDemo()">Demo</button>
-      </aside>
-    </div>
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading" data-lang="proj_heading">Son <span>Projelerim</span></h2>
 
-    <footer class="card">© <span id="year"></span> Emirhan Ercan — Tasarım & Kodlama · Oluşturuldu tek dosya ile</footer>
-  </main>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <i class='bx bx-network-chart'></i>
+                <h3 data-lang="p1_title">IP to Binary Dönüştürücü</h3>
+                <p data-lang="p1_desc">Kullanıcı dostu bir arayüz ile IP adreslerini ikili (binary) formata çeviren web tabanlı bir araç.</p>
+                <div class="tech-stack">HTML, CSS, JS</div>
+            </div>
 
-  <script>
-    // small helpers
-    const codeLines = [
-      "// Merhaba, ben Emirhan Ercan; frontend ve web geliştiricisiyim\n",
-      "function merhaba(){\n  const kim = 'Emirhan Ercan';\n  const is = 'Yazılım Geliştirici';\n  console.log(`${kim} — ${is}`);\n}\n\n",
-      "// Yaptıklarım: responsive site, küçük backend (PHP), interaktif JS uygulamaları.\n",
-      "// Hedef: temiz, anlaşılır ve yeniden kullanılabilir kod.\n",
-      "document.querySelector('#name').innerText = 'Emirhan Ercan | Yazılım Geliştirici';\n"
-    ];
+            <div class="portfolio-box">
+                <i class='bx bxs-user-account'></i>
+                <h3 data-lang="p2_title">Personel Takip Sistemi</h3>
+                <p data-lang="p2_desc">Şirket içi personel yönetimini sağlayan, veritabanı bağlantılı kapsamlı bir yönetim paneli.</p>
+                <div class="tech-stack">PHP, MS Access</div>
+            </div>
 
-    const typedEl = document.getElementById('typedCode');
-    let typingIndex = 0, charIndex = 0;
-    let typingTimer = null;
+            <div class="portfolio-box">
+                <i class='bx bx-football'></i>
+                <h3 data-lang="p3_title">FIFA Serisi Takip Sitesi</h3>
+                <p data-lang="p3_desc">Oyun skorlarını ve serileri kaydetmek için tasarlanmış, yüksek görsel kalitede interaktif web sitesi.</p>
+                <div class="tech-stack">Frontend Design</div>
+            </div>
+        </div>
+    </section>
 
-    function startTyping(){
-      typedEl.innerHTML = '';
-      typingIndex = 0; charIndex = 0;
-      typeNext();
-    }
+    <section class="contact" id="contact">
+        <h2 class="heading" data-lang="contact_heading">İletişime <span>Geç</span></h2>
 
-    function typeNext(){
-      if(typingIndex >= codeLines.length){
-        const cursor = document.createElement('span'); cursor.className='cursor'; typedEl.appendChild(cursor); return;
-      }
-      const line = codeLines[typingIndex];
-      if(charIndex < line.length){
-        typedEl.innerHTML = escapeHtml(typedEl.innerHTML + line[charIndex]);
-        charIndex++;
-        typingTimer = setTimeout(typeNext, 18 + Math.random()*40);
-      } else {
-        typedEl.innerHTML += '\n';
-        typingIndex++; charIndex = 0;
-        typingTimer = setTimeout(typeNext, 150);
-      }
-    }
+        <form action="mailto:emirhanercan032@gmail.com" method="post" enctype="text/plain">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Adınız Soyadınız" required data-lang-ph="ph_name">
+                <input type="email" name="email" placeholder="E-posta Adresiniz" required data-lang-ph="ph_email">
+            </div>
+            <div class="input-box">
+                <input type="text" name="subject" placeholder="Konu" required data-lang-ph="ph_subject">
+            </div>
+            <textarea name="message" cols="30" rows="10" placeholder="Mesajınız" required data-lang-ph="ph_message"></textarea>
+            <input type="submit" value="Mesaj Gönder" class="btn" data-lang-val="btn_send">
+        </form>
+    </section>
 
-    function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2025 by Emirhan Ercan | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
 
-    function restartTyping(){ clearTimeout(typingTimer); startTyping(); }
-
-    // skill bars
-    function animateSkills(){
-      document.querySelectorAll('.bar').forEach(b=>{
-        const val = b.getAttribute('data-val')||70; const inner = b.querySelector('i');
-        inner.style.width = '0%';
-        setTimeout(()=> inner.style.width = val + '%', 80);
-      })
-    }
-
-    function playDemo(){ animateSkills(); restartTyping(); }
-
-    function focusProjects(){ document.getElementById('projects').scrollIntoView({behavior:'smooth'}); }
-
-    function revealEmail(){ document.getElementById('emailMasked').innerText = 'emirhanercan032@gmail.com'; }
-
-    function downloadCV(){
-      // generate simple text CV and download as file
-      const cv = `Emirhan Ercan\nYazılım Geliştirici\n\nBeceriler: HTML, CSS, JavaScript, PHP\nProjeler: Çark Uygulaması, Ercangram, Binary Converter\n`;
-      const blob = new Blob([cv], {type:'text/plain'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'Emirhan-Ercan-CV.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    }
-
-    // inicialize
-    document.getElementById('year').innerText = new Date().getFullYear();
-    startTyping();
-    animateSkills();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
