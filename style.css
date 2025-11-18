@@ -35,7 +35,7 @@ html {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: rgba(8, 8, 8, 0.9);
+    background: rgba(8, 8, 8, 0.95);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,13 +88,15 @@ html {
     display: none;
 }
 
-/* Home Section */
+/* Genel Section Ayarı - Boşluklar Azaltıldı */
 section {
-    min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    min-height: auto; /* İçerik kadar yükseklik */
+    padding: 8rem 9% 4rem; /* Üst ve alt boşluklar kısıldı */
 }
 
+/* Home Section - Ekranı Kaplasın */
 .home {
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -203,6 +205,7 @@ span.multiple-text {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 6rem;
 }
 
 .heading {
@@ -236,6 +239,7 @@ span.multiple-text {
 /* Skills Section */
 .skills {
     background: var(--bg-color);
+    padding-bottom: 6rem;
 }
 
 .skills-container {
@@ -275,6 +279,7 @@ span.multiple-text {
 /* Portfolio Section */
 .portfolio {
     background: var(--second-bg-color);
+    padding-bottom: 8rem;
 }
 
 .portfolio-container {
@@ -323,58 +328,14 @@ span.multiple-text {
     letter-spacing: 1px;
 }
 
-/* Contact Section */
-.contact h2 {
-    margin-bottom: 3rem;
-}
-
-.contact form {
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.contact form .input-box {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.contact form .input-box input,
-.contact form textarea {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--second-bg-color);
-    border-radius: .8rem;
-    margin: .7rem 0;
-    border: 2px solid transparent;
-    transition: .3s;
-}
-
-.contact form .input-box input:focus,
-.contact form textarea:focus {
-    border-color: var(--main-color);
-    background: var(--bg-color);
-}
-
-.contact form .input-box input {
-    width: 49%;
-}
-
-.contact form textarea {
-    resize: none;
-}
-
+/* Footer */
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .footer-text p {
@@ -407,7 +368,7 @@ span.multiple-text {
 
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }
-    section { padding: 10rem 3% 2rem; }
+    section { padding: 8rem 3% 4rem; }
     .portfolio-container { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -429,5 +390,4 @@ span.multiple-text {
     .home { flex-direction: column; }
     .home-img { margin-top: 4rem; }
     .portfolio-container { grid-template-columns: 1fr; }
-    .contact form .input-box input { width: 100%; }
 }

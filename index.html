@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emirhan Ercan | Yazılımcı</title>
+    <title>Emirhan Ercan | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
     <header class="header">
-        <a href="#" class="logo">Emirhan Ercan</a>
+        <a href="#" class="logo">Emirhan.Dev</a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
@@ -19,7 +19,6 @@
             <a href="#about" data-lang="nav_about">Hakkımda</a>
             <a href="#skills" data-lang="nav_skills">Yetenekler</a>
             <a href="#portfolio" data-lang="nav_portfolio">Projeler</a>
-            <a href="#contact" data-lang="nav_contact">İletişim</a>
             <button id="lang-btn">EN</button>
         </nav>
     </header>
@@ -38,7 +37,7 @@
                 <a href="https://github.com/" target="_blank"><i class='bx bxl-github'></i></a>
                 <a href="mailto:emirhanercan032@gmail.com"><i class='bx bxs-envelope'></i></a>
             </div>
-            <a href="#contact" class="btn" data-lang="btn_contact">Bana Ulaş</a>
+            <a href="mailto:emirhanercan032@gmail.com" class="btn" data-lang="btn_contact">Bana Ulaş</a>
         </div>
 
         <div class="home-img">
@@ -80,6 +79,27 @@
 
         <div class="portfolio-container">
             <div class="portfolio-box">
+                <i class='bx bx-coffee'></i>
+                <h3 data-lang="p_cafe_title">Kafe Otomasyonu</h3>
+                <p data-lang="p_cafe_desc">Müşteri menüsü, şifreli garson/admin panelleri, stok takibi, ciro yönetimi ve veri yedekleme içeren kapsamlı sistem.</p>
+                <div class="tech-stack">C#</div>
+            </div>
+
+            <div class="portfolio-box">
+                <i class='bx bxs-plane-alt'></i>
+                <h3 data-lang="p_flight_title">Yolcu Uçak Bileti Paneli</h3>
+                <p data-lang="p_flight_desc">Kullanıcıların uçak bileti satın almasını, sorgulamasını ve iade işlemlerini gerçekleştirmesini sağlayan otomasyon.</p>
+                <div class="tech-stack">C#</div>
+            </div>
+
+             <div class="portfolio-box">
+                <i class='bx bx-map-pin'></i>
+                <h3 data-lang="p_alarm_title">Konum Bazlı Alarm</h3>
+                <p data-lang="p_alarm_desc">Hedeflenen coğrafi konuma ulaşıldığında kullanıcıyı uyaran ve alarm çalan web/mobil tabanlı sistem.</p>
+                <div class="tech-stack">React, JS</div>
+            </div>
+
+            <div class="portfolio-box">
                 <i class='bx bx-network-chart'></i>
                 <h3 data-lang="p1_title">IP to Binary Dönüştürücü</h3>
                 <p data-lang="p1_desc">Kullanıcı dostu bir arayüz ile IP adreslerini ikili (binary) formata çeviren web tabanlı bir araç.</p>
@@ -100,22 +120,6 @@
                 <div class="tech-stack">Frontend Design</div>
             </div>
         </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2 class="heading" data-lang="contact_heading">İletişime <span>Geç</span></h2>
-
-        <form action="mailto:emirhanercan032@gmail.com" method="post" enctype="text/plain">
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Adınız Soyadınız" required data-lang-ph="ph_name">
-                <input type="email" name="email" placeholder="E-posta Adresiniz" required data-lang-ph="ph_email">
-            </div>
-            <div class="input-box">
-                <input type="text" name="subject" placeholder="Konu" required data-lang-ph="ph_subject">
-            </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Mesajınız" required data-lang-ph="ph_message"></textarea>
-            <input type="submit" value="Mesaj Gönder" class="btn" data-lang-val="btn_send">
-        </form>
     </section>
 
     <footer class="footer">

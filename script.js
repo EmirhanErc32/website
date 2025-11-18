@@ -3,7 +3,7 @@ const textElement = document.querySelector('.multiple-text');
 const titlesTR = ["Mobil Geliştirici", "Web Geliştirici", "Frontend Developer", "Backend Developer"];
 const titlesEN = ["Mobile Developer", "Web Developer", "Frontend Developer", "Backend Developer"];
 
-let currentTitles = titlesTR; // Varsayılan Türkçe
+let currentTitles = titlesTR;
 let count = 0;
 let index = 0;
 let currentText = "";
@@ -87,9 +87,8 @@ const translations = {
         nav_about: "Hakkımda",
         nav_skills: "Yetenekler",
         nav_portfolio: "Projeler",
-        nav_contact: "İletişim",
         home_hello: "Merhaba, Ben",
-        home_iam: "Ben", // EKLENDİ
+        home_iam: "Ben",
         home_desc: "Mobil ve web teknolojileriyle modern çözümler üreten, öğrenmeye tutkulu bir geliştiriciyim.",
         btn_contact: "Bana Ulaş",
         about_heading: "Hakkımda",
@@ -98,23 +97,28 @@ const translations = {
         birth_date: "Doğum Yılı: 2005",
         skills_heading: "Teknik",
         proj_heading: "Son",
+        // Yeni Projeler
+        p_cafe_title: "Kafe Otomasyonu",
+        p_cafe_desc: "Müşteri menüsü, şifreli garson/admin panelleri, stok takibi, ciro yönetimi ve veri yedekleme içeren kapsamlı sistem.",
+        p_flight_title: "Yolcu Uçak Bileti Paneli",
+        p_flight_desc: "Kullanıcıların uçak bileti satın almasını, sorgulamasını ve iade işlemlerini gerçekleştirmesini sağlayan otomasyon.",
+        p_alarm_title: "Konum Bazlı Alarm",
+        p_alarm_desc: "Hedeflenen coğrafi konuma ulaşıldığında kullanıcıyı uyaran ve alarm çalan web/mobil tabanlı sistem.",
+        // Eski Projeler
         p1_title: "IP to Binary Dönüştürücü",
         p1_desc: "Kullanıcı dostu bir arayüz ile IP adreslerini ikili (binary) formata çeviren web tabanlı bir araç.",
         p2_title: "Personel Takip Sistemi",
         p2_desc: "Şirket içi personel yönetimini sağlayan, veritabanı bağlantılı kapsamlı bir yönetim paneli.",
         p3_title: "FIFA Serisi Takip Sitesi",
-        p3_desc: "Oyun skorlarını ve serileri kaydetmek için tasarlanmış, yüksek görsel kalitede interaktif web sitesi.",
-        contact_heading: "İletişime",
-        btn_send: "Mesaj Gönder"
+        p3_desc: "Oyun skorlarını ve serileri kaydetmek için tasarlanmış, yüksek görsel kalitede interaktif web sitesi."
     },
     en: {
         nav_home: "Home",
         nav_about: "About",
         nav_skills: "Skills",
         nav_portfolio: "Projects",
-        nav_contact: "Contact",
         home_hello: "Hello, I am",
-        home_iam: "I am", // EKLENDİ
+        home_iam: "I am",
         home_desc: "A passionate developer creating modern solutions with mobile and web technologies.",
         btn_contact: "Contact Me",
         about_heading: "About Me",
@@ -123,14 +127,20 @@ const translations = {
         birth_date: "Birth Year: 2005",
         skills_heading: "Technical",
         proj_heading: "Latest",
+        // Yeni Projeler EN
+        p_cafe_title: "Cafe Automation",
+        p_cafe_desc: "Comprehensive system with customer menu, secure waiter/admin panels, stock tracking, revenue management, and data backup.",
+        p_flight_title: "Flight Ticket Panel",
+        p_flight_desc: "Automation allowing users to purchase, query, and return flight tickets seamlessly.",
+        p_alarm_title: "Location Based Alarm",
+        p_alarm_desc: "Web/mobile system that triggers an alarm and alerts the user when a specific geographic location is reached.",
+        // Eski Projeler EN
         p1_title: "IP to Binary Converter",
         p1_desc: "A web-based tool that converts IP addresses to binary format with a user-friendly interface.",
         p2_title: "Personnel Tracking System",
         p2_desc: "A comprehensive database-connected management panel for internal personnel management.",
         p3_title: "FIFA Series Tracker",
-        p3_desc: "An interactive website with high visual quality designed to record game scores and series.",
-        contact_heading: "Get in",
-        btn_send: "Send Message"
+        p3_desc: "An interactive website with high visual quality designed to record game scores and series."
     }
 };
 
@@ -157,17 +167,15 @@ function updateLanguage(lang) {
     elements.forEach(el => {
         const key = el.getAttribute('data-lang');
         if (translations[lang][key]) {
-            if(key === 'skills_heading' || key === 'proj_heading' || key === 'contact_heading' || key === 'about_heading'){
+            if(key === 'skills_heading' || key === 'proj_heading' || key === 'about_heading'){
                 let spanText = "";
                 if(lang === 'tr'){
                     if(key === 'skills_heading') spanText = "Teknik <span>Yetenekler</span>";
                     if(key === 'proj_heading') spanText = "Son <span>Projelerim</span>";
-                    if(key === 'contact_heading') spanText = "İletişime <span>Geç</span>";
                     if(key === 'about_heading') spanText = "Hakkımda <span>Ben Kimim?</span>";
                 } else {
                     if(key === 'skills_heading') spanText = "Technical <span>Skills</span>";
                     if(key === 'proj_heading') spanText = "Latest <span>Projects</span>";
-                    if(key === 'contact_heading') spanText = "Get in <span>Touch</span>";
                     if(key === 'about_heading') spanText = "About <span>Me</span>";
                 }
                 el.innerHTML = spanText;
@@ -175,27 +183,5 @@ function updateLanguage(lang) {
                 el.innerText = translations[lang][key];
             }
         }
-    });
-
-    const inputs = document.querySelectorAll('[data-lang-ph]');
-    inputs.forEach(el => {
-        const key = el.getAttribute('data-lang-ph');
-        if(lang === 'en') {
-            if(key === 'ph_name') el.placeholder = "Your Name";
-            if(key === 'ph_email') el.placeholder = "Your Email";
-            if(key === 'ph_subject') el.placeholder = "Subject";
-            if(key === 'ph_message') el.placeholder = "Your Message";
-        } else {
-            if(key === 'ph_name') el.placeholder = "Adınız Soyadınız";
-            if(key === 'ph_email') el.placeholder = "E-posta Adresiniz";
-            if(key === 'ph_subject') el.placeholder = "Konu";
-            if(key === 'ph_message') el.placeholder = "Mesajınız";
-        }
-    });
-
-    const btns = document.querySelectorAll('[data-lang-val]');
-    btns.forEach(el => {
-        const key = el.getAttribute('data-lang-val');
-        el.value = translations[lang][key];
     });
 }
