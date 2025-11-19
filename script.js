@@ -1,7 +1,21 @@
 // --- Daktilo Efekti Değişkenleri ---
 const textElement = document.querySelector('.multiple-text');
-const titlesTR = ["Mobil Geliştirici", "Web Geliştirici", "Frontend Developer", "Backend Developer"];
-const titlesEN = ["Mobile Developer", "Web Developer", "Frontend Developer", "Backend Developer"];
+
+// DÜZELTME 1: Türkçe için son ekler eklendi (-yim, -im)
+const titlesTR = [
+    "Mobil Geliştiriciyim", 
+    "Web Geliştiriciyim", 
+    "Frontend Developerım", 
+    "Backend Developerım"
+];
+
+// DÜZELTME 2: İngilizce için başa "a" takısı eklendi
+const titlesEN = [
+    "a Mobile Developer", 
+    "a Web Developer", 
+    "a Frontend Developer", 
+    "a Backend Developer"
+];
 
 let currentTitles = titlesTR;
 let count = 0;
@@ -97,14 +111,12 @@ const translations = {
         birth_date: "Doğum Yılı: 2005",
         skills_heading: "Teknik",
         proj_heading: "Son",
-        // Yeni Projeler
         p_cafe_title: "Kafe Otomasyonu",
         p_cafe_desc: "Müşteri menüsü, şifreli garson/admin panelleri, stok takibi, ciro yönetimi ve veri yedekleme içeren kapsamlı sistem.",
         p_flight_title: "Yolcu Uçak Bileti Paneli",
         p_flight_desc: "Kullanıcıların uçak bileti satın almasını, sorgulamasını ve iade işlemlerini gerçekleştirmesini sağlayan otomasyon.",
         p_alarm_title: "Konum Bazlı Alarm",
         p_alarm_desc: "Hedeflenen coğrafi konuma ulaşıldığında kullanıcıyı uyaran ve alarm çalan web/mobil tabanlı sistem.",
-        // Eski Projeler
         p1_title: "IP to Binary Dönüştürücü",
         p1_desc: "Kullanıcı dostu bir arayüz ile IP adreslerini ikili (binary) formata çeviren web tabanlı bir araç.",
         p2_title: "Personel Takip Sistemi",
@@ -118,7 +130,7 @@ const translations = {
         nav_skills: "Skills",
         nav_portfolio: "Projects",
         home_hello: "Hello, I am",
-        home_iam: "I am",
+        home_iam: "I am", // "I am" sabit kalıyor, "a Mobile Developer" daktilo ile geliyor.
         home_desc: "A passionate developer creating modern solutions with mobile and web technologies.",
         btn_contact: "Contact Me",
         about_heading: "About Me",
@@ -127,14 +139,12 @@ const translations = {
         birth_date: "Birth Year: 2005",
         skills_heading: "Technical",
         proj_heading: "Latest",
-        // Yeni Projeler EN
         p_cafe_title: "Cafe Automation",
         p_cafe_desc: "Comprehensive system with customer menu, secure waiter/admin panels, stock tracking, revenue management, and data backup.",
         p_flight_title: "Flight Ticket Panel",
         p_flight_desc: "Automation allowing users to purchase, query, and return flight tickets seamlessly.",
         p_alarm_title: "Location Based Alarm",
         p_alarm_desc: "Web/mobile system that triggers an alarm and alerts the user when a specific geographic location is reached.",
-        // Eski Projeler EN
         p1_title: "IP to Binary Converter",
         p1_desc: "A web-based tool that converts IP addresses to binary format with a user-friendly interface.",
         p2_title: "Personnel Tracking System",
@@ -149,10 +159,13 @@ let currentLang = 'tr';
 
 langBtn.addEventListener('click', () => {
     currentLang = currentLang === 'tr' ? 'en' : 'tr';
-    langBtn.innerText = currentLang === 'tr' ? 'EN' : 'TR';
+    
+    // DÜZELTME 3: Buton o anki dili gösteriyor (TR ise TR, EN ise EN)
+    langBtn.innerText = currentLang === 'tr' ? 'TR' : 'EN';
     
     updateLanguage(currentLang);
     
+    // Daktilo efektini sıfırla ve dile göre yeniden başlat
     clearTimeout(typeTimeout);
     currentTitles = currentLang === 'tr' ? titlesTR : titlesEN;
     count = 0;
