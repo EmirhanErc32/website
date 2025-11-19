@@ -147,7 +147,7 @@ langBtn.addEventListener('click', () => {
     currentLang = currentLang === 'tr' ? 'en' : 'tr';
     
     // GÜNCELLEME: İngilizce modunda "ING", Türkçe modunda "TR" yazsın
-    langBtn.innerText = currentLang === 'tr' ? 'TR' : 'ING';
+    langBtn.innerText = currentLang === 'tr' ? 'TR' : 'EN';
     
     updateLanguage(currentLang);
     
