@@ -1,21 +1,7 @@
 // --- Daktilo Efekti Değişkenleri ---
 const textElement = document.querySelector('.multiple-text');
-
-// DÜZELTME 1: Türkçe için son ekler eklendi (-yim, -im)
-const titlesTR = [
-    "Mobil Geliştiriciyim", 
-    "Web Geliştiriciyim", 
-    "Frontend Developerım", 
-    "Backend Developerım"
-];
-
-// DÜZELTME 2: İngilizce için başa "a" takısı eklendi
-const titlesEN = [
-    "a Mobile Developer", 
-    "a Web Developer", 
-    "a Frontend Developer", 
-    "a Backend Developer"
-];
+const titlesTR = ["Mobil Geliştiriciyim", "Web Geliştiriciyim", "Frontend Developerım", "Backend Developerım"];
+const titlesEN = ["a Mobile Developer", "a Web Developer", "a Frontend Developer", "a Backend Developer"];
 
 let currentTitles = titlesTR;
 let count = 0;
@@ -130,7 +116,7 @@ const translations = {
         nav_skills: "Skills",
         nav_portfolio: "Projects",
         home_hello: "Hello, I am",
-        home_iam: "I am", // "I am" sabit kalıyor, "a Mobile Developer" daktilo ile geliyor.
+        home_iam: "I am",
         home_desc: "A passionate developer creating modern solutions with mobile and web technologies.",
         btn_contact: "Contact Me",
         about_heading: "About Me",
@@ -160,12 +146,11 @@ let currentLang = 'tr';
 langBtn.addEventListener('click', () => {
     currentLang = currentLang === 'tr' ? 'en' : 'tr';
     
-    // DÜZELTME 3: Buton o anki dili gösteriyor (TR ise TR, EN ise EN)
-    langBtn.innerText = currentLang === 'tr' ? 'TR' : 'EN';
+    // GÜNCELLEME: İngilizce modunda "ING", Türkçe modunda "TR" yazsın
+    langBtn.innerText = currentLang === 'tr' ? 'TR' : 'ING';
     
     updateLanguage(currentLang);
     
-    // Daktilo efektini sıfırla ve dile göre yeniden başlat
     clearTimeout(typeTimeout);
     currentTitles = currentLang === 'tr' ? titlesTR : titlesEN;
     count = 0;
